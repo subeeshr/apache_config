@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-/usr/local/bin/sshpass -p root1234 scp -o StrictHostKeyChecking=no -r `ls | egrep -v '^jenkins$'` root@54.154.236.251:/root/test_install/
+/usr/local/bin/sshpass -p root1234 scp -o StrictHostKeyChecking=no -r `ls | egrep -v '^jenkins_apache.sh$'` root@54.154.236.251:/root/test_install/
 #Wait for cronjob to run
 sleep 3m
 
