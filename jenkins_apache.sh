@@ -1,10 +1,10 @@
 #!/bin/bash
 set -x
-/usr/local/bin/sshpass -p root1234 scp -o StrictHostKeyChecking=no -r `ls | egrep -v '^jenkins_apache.sh$'` root@54.154.236.251:/root/test_install/
+/usr/local/bin/sshpass -p ${root} scp -o StrictHostKeyChecking=no -r `ls | egrep -v '^jenkins_apache.sh$'` root@54.154.236.251:/root/test_install/
 #Wait for cronjob to run
 sleep 3m
 
-/usr/local/bin/sshpass -p root1234 scp -o StrictHostKeyChecking=no -r root@54.154.236.251:/root/test_install/httpd.log  httpd.log
+/usr/local/bin/sshpass -p ${root}4 scp -o StrictHostKeyChecking=no -r root@54.154.236.251:/root/test_install/httpd.log  httpd.log
 ls -lrta
 while [ -f httpd.log ] ;
 do
